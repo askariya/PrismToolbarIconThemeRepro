@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToolbarIconThemeRepro.MainPage"
+             Title="Toolbar icon theme repro"
+             BackgroundColor="{DynamicResource PageBackground}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{DynamicResource ToolbarIcon}"
+                     Clicked="OnToggleThemeClicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+        <Label TextColor="{DynamicResource TextColor}"
+               Text="Click the toolbar icon (or the button below) to swap the theme dictionary. On Windows with Prism registered (USE_PRISM in MauiProgram.cs) this throws a NullReferenceException." />
+        <Button Text="Toggle theme" Clicked="OnToggleThemeClicked" />
+    </VerticalStackLayout>
+</ContentPage>
